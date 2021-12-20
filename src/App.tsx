@@ -1,24 +1,38 @@
-import { useState } from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 
-import { BrowserRouter as Router, Route, Link } from "react-react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
 import EventList from "./components/EventList";
-import Login from "./components/Login";
+import Login from "./containers/Login";
 import UserProfile from "./components/UserProfile";
 import EventDetail from "./components/EventDetail";
 import EventParticipate from "./components/EventParticipate";
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 function App() {
   return (
     <Router>
-      <Route path="/" element={<EventList />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/profile" element={<UserProfile />} />
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/" element={<EventList />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<UserProfile />} />
 
-      <Route path="/event" element={<EventDetail />} />
-      <Route path="/event/application" element={<EventParticipate />} />
+          <Route path="/event" element={<EventDetail />} />
+          <Route path="/event/application" element={<EventParticipate />} />
+        </Switch>
+        <Footer />
+      </div>
     </Router>
   );
 }

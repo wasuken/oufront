@@ -6,12 +6,12 @@ import { BrowserRouter } from "react-ruter-dom";
 import { RecoilRoot } from "recoil";
 
 ReactDOM.render(
-  <RecoilRoot>
-    <React.StrictMode>
+  <React.StrictMode>
+    <RecoilRoot>
       <Suspense fallback={<div>Loading... </div>}>
         <App />
       </Suspense>
-    </React.StrictMode>
-  </RecoilRoot>,
+    </RecoilRoot>
+  </React.StrictMode>,
   document.getElementById("root")
 );
