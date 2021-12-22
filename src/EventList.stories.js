@@ -4,7 +4,7 @@ import { EventList } from './components/EventList';
 import { OufEvent, EventListProps, initialOufEventState } from './types'
 
 export default {
-  title: 'eventList'
+  title: 'event'
 };
 
 const eList: OufEvent[] = [
