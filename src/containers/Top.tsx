@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import EventList from "../components/EventList";
 
 
-export function Top(){
+export default function Top(){
   // 三つのリスト取得
   // 近日開催イベントリスト
   // ホットイベント一覧

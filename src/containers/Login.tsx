@@ -13,7 +13,7 @@ interface ILoginResponse {
   };
 }
 
-export function Login() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // ログイン処理

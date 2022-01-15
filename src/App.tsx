@@ -3,7 +3,6 @@ import "./App.css";
 
 import {
   BrowserRouter as Router,
-  Switch,
   Routes,
   Route,
   Link,
@@ -23,14 +22,14 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Switch>
+        <Routes>
           <Route exact path="/" element={<EventList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<UserProfile />} />
 
           <Route path="/event" element={<EventDetail />} />
           <Route path="/event/application" element={<EventParticipate />} />
-        </Switch>
+        </Routes>
         <Footer />
       </div>
     </Router>
