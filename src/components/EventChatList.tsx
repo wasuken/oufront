@@ -6,7 +6,7 @@ import { EventChatListProps } from "../types";
 
 import "./event_chat.css";
 
-export function EventChatList(props: EventChatList){
+export default function EventChatList(props: EventChatList){
   return (
 	<Container className="w-75">
       <h2 className="p-3">{props.title}</h2>
@@ -18,7 +18,7 @@ export function EventChatList(props: EventChatList){
           <Col md="9">
             <h4 className="title">
 			  {e.user_name}
-			  (<small className="user-id">@{e.user_id}</small>)
+			  (<small className="userid">@{e.user_id}</small>)
 			</h4>
           </Col>
           <Col md="12" className="p-3">

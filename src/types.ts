@@ -43,7 +43,7 @@ export type GroupListProps = {
 	title: string;
 };
 
-export const initialOufEventState: Event = {
+export const initialOufEventState: OufEvent = {
 	title: "",
 	description: "",
 	event_date: {
@@ -57,13 +57,17 @@ export const initialOufEventState: Event = {
 };
 
 export const initialAuthInfoState: AuthInfo = {
-	email: "",
-	display_name: "",
-	login: false,
+	token: ""
 };
 
+// export const initialAuthInfoState: AuthInfo = {
+//   email: "",
+//   display_name: "",
+//   login: false,
+// };
+
 export type EventChat = {
-	user_id: string;
+  user_id: string;
 	user_name: string;
 	contents: string;
 	created_at: Date;
@@ -71,5 +75,9 @@ export type EventChat = {
 
 export type EventChatListProps = {
 	list: EventChat[];
+	title: string;
+}
+export type EventChatInputProps = {
+	user: User;
 	title: string;
 }

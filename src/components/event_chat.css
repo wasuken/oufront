@@ -13,13 +13,6 @@
 	border-bottom: 3px solid #000;
 }
 
-.chatlist .title .user-id{
-	padding-left: 3px;
-	font-size: 11px;
-	font-size: 1.1rem;
-	color: rgb(217,215,219);
-}
-
 .chatlist .comment{
 	position: relative;
 	padding: 1rem 2rem;
@@ -39,4 +32,13 @@
 	color: #fff;
 	border-radius: 10px 10px 0 0;
 	background: #000;
+}
+
+.userid{
+	color: gray;
+	padding-left: 3px;
+}
+
+.chat-input-panel{
+	box-shadow: 2px 2px 3px;
 }

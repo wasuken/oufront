@@ -6,7 +6,7 @@ import { EventListProps } from "../types";
 
 import "./event_list.css";
 
-export function EventList(props: EventListProps) {
+export default function EventList(props: EventListProps) {
   return (
     <Container className="w-75">
       <h2 className="p-3">{props.title}</h2>

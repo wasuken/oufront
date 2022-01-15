@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { GroupListProps } from "../types";
 
-export function GroupList(props: GroupListProps) {
+export default function GroupList(props: GroupListProps) {
   return (
     <Container className="w-75">
       <h2 className="p-3">

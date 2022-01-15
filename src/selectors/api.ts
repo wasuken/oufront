@@ -17,8 +17,8 @@ export const fetchChallangeLoginAuthInfoState = selector<AutuInfo>({
       password,
     };
     axios
-      .post(`/api/login`, formData)
-      .then((res) => set(authInfoState, { ...res.data, login: true }));
+    .post(`/api/login`, formData)
+    .then((res) => set(authInfoState, { ...res.data, login: true }));
   },
 });
 
@@ -33,8 +33,8 @@ export const fetchEventListState = selector<OufEvent[]>({
     };
     if (token) config.headers.Authorization = token;
     axios
-      .get(`/api/events`, config)
-      .then((res) => set(eventListState, res.data));
+    .get(`/api/events`, config)
+    .then((res) => set(eventListState, res.data));
   },
 });
 
@@ -47,19 +47,20 @@ export const fetchEventDetailState = selector<OufEvent>({
     };
     if (token) config.headers.Authorization = token;
     axios
-      .get(`/api/event/${event_id}`, config)
-      .then((res) => set(eventListState, res.data));
+    .get(`/api/event/${event_id}`, config)
+    .then((res) => set(eventListState, res.data));
   },
 });
 
+const BaseActions = {
+  Create: "登録",
+  Read: "取得",
+  Update: "更新",
+  Delete: "削除",
+},
+
 // TODO: 既存ライブラリで管理すべき
 const ActionMessageMap = {
-  BaseActions: {
-    Create: "登録",
-    Read: "取得",
-    Update: "更新",
-    Delete: "削除",
-  },
   Event: {
     Name: "イベント",
     Failed: "失敗",
@@ -93,6 +94,12 @@ const ActionMessageMap = {
   },
 }
 
+type FetchParticipateEventResponse = {
+  status: number;
+  msg: string;
+  event: OufEvent;
+}
+
 // イベント参加
 export const fetchParticipateEventState = selector<OufEvent>({
   key: "selector/fetchParticipateEventState",
@@ -106,8 +113,11 @@ export const fetchParticipateEventState = selector<OufEvent>({
       event_id
     }
     axios
-      .post(`/api/event/`, data,  config)
-      .then((res) => set(actionState, `${event_name} に参加しました。`));
+    .post<FetchParticipateEventResponse>(`/api/event/`, data,  config)
+    .then((res) => {
+	  console.log(res);
+	  set(actionState, `${res.event.title} に参加しました。`)
+	});
   },
 });
 
