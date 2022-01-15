@@ -1,6 +1,6 @@
 import React from 'react';
 import {action} from '@storybook/addon-actions';
-import { EventList } from './components/EventList';
+import EventList from './components/EventList';
 import { OufEvent, EventListProps, initialOufEventState } from './types'
 
 export default {
